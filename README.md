@@ -1,1 +1,239 @@
 # pulse-toolkit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse Framework - Extensible Frontend Toolkit</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="pulse-navbar">
+        <div class="pulse-container pulse-flex pulse-justify-between pulse-items-center">
+            <a href="#" class="pulse-navbar-brand">Pulse</a>
+            <ul class="pulse-navbar-nav">
+                <li class="pulse-nav-item">
+                    <a href="#grid" class="pulse-nav-link">Grid</a>
+                </li>
+                <li class="pulse-nav-item">
+                    <a href="#components" class="pulse-nav-link">Components</a>
+                </li>
+                <li class="pulse-nav-item pulse-dropdown">
+                    <a href="#" class="pulse-nav-link pulse-dropdown-toggle" id="dropdownMenuLink">
+                        More <span style="margin-left: var(--pulse-spacing-xs);">&#9662;</span>
+                    </a>
+                    <div class="pulse-dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="pulse-dropdown-item" href="#buttons">Buttons</a>
+                        <a class="pulse-dropdown-item" href="#cards">Cards</a>
+                        <a class="pulse-dropdown-item" href="#forms">Forms</a>
+                        <a class="pulse-dropdown-item" href="#alerts">Alerts</a>
+                    </div>
+                </li>
+                <li class="pulse-nav-item">
+                    <a href="https://github.com/your-repo/pulse" target="_blank" class="pulse-btn pulse-btn-outline-primary pulse-ml-md">GitHub</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pulse-bg-primary pulse-text-white pulse-py-xxl pulse-text-center">
+        <div class="pulse-container">
+            <h1 class="pulse-text-5xl pulse-font-bold pulse-mb-md">Pulse Frontend Toolkit</h1>
+            <p class="pulse-text-xl pulse-mb-lg pulse-opacity-90">A lightweight, extensible, and responsive HTML, CSS, & JS library.</p>
+            <a href="#grid" class="pulse-btn pulse-btn-info pulse-mr-md">Get Started</a>
+            <a href="#components" class="pulse-btn pulse-btn-outline-primary">Explore Components</a>
+        </div>
+    </header>
+
+    <main class="pulse-py-lg">
+        <!-- Grid System Section -->
+        <section id="grid" class="pulse-container pulse-mb-lg">
+            <h2 class="pulse-text-3xl pulse-font-bold pulse-mb-md pulse-text-center">Grid System</h2>
+            <p class="pulse-text-lg pulse-text-center pulse-mb-lg pulse-text-gray-700">Pulse uses a flexible 12-column grid system built with Flexbox, ensuring your layouts are responsive across all devices.</p>
+
+            <h3 class="pulse-text-2xl pulse-font-semibold pulse-mb-md">Basic Grid</h3>
+            <p class="pulse-mb-md pulse-text-gray-700">Wrap <code>.pulse-col-*</code> classes inside a <code>.pulse-row</code>. Use <code>.pulse-container</code> for centered content with max-width.</p>
+            <div class="pulse-card">
+                <div class="pulse-card-body">
+                    <div class="pulse-row">
+                        <div class="pulse-col-4">
+                            <div class="pulse-bg-blue-200 pulse-p-md pulse-rounded-md pulse-text-center">Col-4</div>
+                        </div>
+                        <div class="pulse-col-4">
+                            <div class="pulse-bg-blue-200 pulse-p-md pulse-rounded-md pulse-text-center">Col-4</div>
+                        </div>
+                        <div class="pulse-col-4">
+                            <div class="pulse-bg-blue-200 pulse-p-md pulse-rounded-md pulse-text-center">Col-4</div>
+                        </div>
+                    </div>
+                    <div class="pulse-row pulse-mt-md">
+                        <div class="pulse-col-6">
+                            <div class="pulse-bg-blue-200 pulse-p-md pulse-rounded-md pulse-text-center">Col-6</div>
+                        </div>
+                        <div class="pulse-col-6">
+                            <div class="pulse-bg-blue-200 pulse-p-md pulse-rounded-md pulse-text-center">Col-6</div>
+                        </div>
+                    </div>
+                    <div class="pulse-row pulse-mt-md">
+                        <div class="pulse-col-12">
+                            <div class="pulse-bg-blue-200 pulse-p-md pulse-rounded-md pulse-text-center">Col-12</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <pre><code>&lt;div class="pulse-row"&gt;
+    &lt;div class="pulse-col-4"&gt;...&lt;/div&gt;
+    &lt;div class="pulse-col-4"&gt;...&lt;/div&gt;
+    &lt;div class="pulse-col-4"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="pulse-row"&gt;
+    &lt;div class="pulse-col-6"&gt;...&lt;/div&gt;
+    &lt;div class="pulse-col-6"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="pulse-row"&gt;
+    &lt;div class="pulse-col-12"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3 class="pulse-text-2xl pulse-font-semibold pulse-mb-md">Responsive Grid</h3>
+            <p class="pulse-mb-md pulse-text-gray-700">Use breakpoint prefixes like <code>pulse-col-sm-*</code>, <code>pulse-col-md-*</code>, and <code>pulse-col-lg-*</code> to define different column widths at various screen sizes.</p>
+            <div class="pulse-card">
+                <div class="pulse-card-body">
+                    <div class="pulse-row">
+                        <div class="pulse-col-12 pulse-col-sm-6 pulse-col-md-4">
+                            <div class="pulse-bg-green-200 pulse-p-md pulse-rounded-md pulse-text-center">Col-12 (xs), Col-6 (sm), Col-4 (md+)</div>
+                        </div>
+                        <div class="pulse-col-12 pulse-col-sm-6 pulse-col-md-4">
+                            <div class="pulse-bg-green-200 pulse-p-md pulse-rounded-md pulse-text-center">Col-12 (xs), Col-6 (sm), Col-4 (md+)</div>
+                        </div>
+                        <div class="pulse-col-12 pulse-col-sm-12 pulse-col-md-4">
+                            <div class="pulse-bg-green-200 pulse-p-md pulse-rounded-md pulse-text-center">Col-12 (xs/sm), Col-4 (md+)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <pre><code>&lt;div class="pulse-row"&gt;
+    &lt;div class="pulse-col-12 pulse-col-sm-6 pulse-col-md-4"&gt;...&lt;/div&gt;
+    &lt;div class="pulse-col-12 pulse-col-sm-6 pulse-col-md-4"&gt;...&lt;/div&gt;
+    &lt;div class="pulse-col-12 pulse-col-sm-12 pulse-col-md-4"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <!-- Components Section -->
+        <section id="components" class="pulse-container pulse-mt-lg">
+            <h2 class="pulse-text-3xl pulse-font-bold pulse-mb-md pulse-text-center">Components</h2>
+            <p class="pulse-text-lg pulse-text-center pulse-mb-lg pulse-text-gray-700">Pulse offers a set of pre-built, styled components to kickstart your UI development.</p>
+
+            <!-- Buttons -->
+            <h3 id="buttons" class="pulse-text-2xl pulse-font-semibold pulse-mb-md">Buttons</h3>
+            <p class="pulse-mb-md pulse-text-gray-700">Use <code>.pulse-btn</code> for base styling, then add color variants like <code>.pulse-btn-primary</code>, <code>.pulse-btn-success</code>, etc. for different themes. Outline variants are also available.</p>
+            <div class="pulse-card">
+                <div class="pulse-card-body pulse-flex pulse-flex-wrap pulse-gap-md pulse-items-center">
+                    <button class="pulse-btn pulse-btn-primary">Primary Button</button>
+                    <button class="pulse-btn pulse-btn-secondary">Secondary Button</button>
+                    <button class="pulse-btn pulse-btn-success">Success Button</button>
+                    <button class="pulse-btn pulse-btn-danger">Danger Button</button>
+                    <button class="pulse-btn pulse-btn-info">Info Button</button>
+                    <button class="pulse-btn pulse-btn-warning">Warning Button</button>
+                    <button class="pulse-btn pulse-btn-outline-primary">Outline Primary</button>
+                    <button class="pulse-btn pulse-btn-outline-secondary">Outline Secondary</button>
+                </div>
+            </div>
+            <pre><code>&lt;button class="pulse-btn pulse-btn-primary"&gt;Primary Button&lt;/button&gt;
+&lt;button class="pulse-btn pulse-btn-outline-primary"&gt;Outline Primary&lt;/button&gt;</code></pre>
+
+            <!-- Cards -->
+            <h3 id="cards" class="pulse-text-2xl pulse-font-semibold pulse-mt-lg pulse-mb-md">Cards</h3>
+            <p class="pulse-mb-md pulse-text-gray-700">Cards are flexible content containers. Use <code>.pulse-card</code>, with optional <code>.pulse-card-header</code>, <code>.pulse-card-body</code>, and <code>.pulse-card-footer</code>.</p>
+            <div class="pulse-card">
+                <div class="pulse-card-header">Card Header</div>
+                <div class="pulse-card-body">
+                    This is the main content of the card. You can put any text, images, or other components here.
+                </div>
+                <div class="pulse-card-footer">Card Footer</div>
+            </div>
+            <pre><code>&lt;div class="pulse-card"&gt;
+    &lt;div class="pulse-card-header"&gt;Card Header&lt;/div&gt;
+    &lt;div class="pulse-card-body"&gt;
+        This is the main content.
+    &lt;/div&gt;
+    &lt;div class="pulse-card-footer"&gt;Card Footer&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <!-- Forms -->
+            <h3 id="forms" class="pulse-text-2xl pulse-font-semibold pulse-mt-lg pulse-mb-md">Forms</h3>
+            <p class="pulse-mb-md pulse-text-gray-700">Standardized form elements for consistent input styling. Use <code>.pulse-form-group</code> to group labels and controls, and <code>.pulse-form-control</code> for inputs.</p>
+            <div class="pulse-card">
+                <div class="pulse-card-body">
+                    <form>
+                        <div class="pulse-form-group">
+                            <label for="email" class="pulse-form-label">Email address</label>
+                            <input type="email" id="email" class="pulse-form-control" placeholder="you@example.com">
+                        </div>
+                        <div class="pulse-form-group">
+                            <label for="password" class="pulse-form-label">Password</label>
+                            <input type="password" id="password" class="pulse-form-control" placeholder="••••••••">
+                        </div>
+                        <div class="pulse-form-group">
+                            <label class="pulse-checkbox">
+                                <input type="checkbox" checked> Remember me
+                            </label>
+                            <label class="pulse-radio">
+                                <input type="radio" name="option" checked> Option 1
+                            </label>
+                            <label class="pulse-radio">
+                                <input type="radio" name="option"> Option 2
+                            </label>
+                        </div>
+                        <button type="submit" class="pulse-btn pulse-btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <pre><code>&lt;div class="pulse-form-group"&gt;
+    &lt;label for="email" class="pulse-form-label"&gt;Email address&lt;/label&gt;
+    &lt;input type="email" id="email" class="pulse-form-control" placeholder="you@example.com"&gt;
+&lt;/div&gt;
+&lt;label class="pulse-checkbox"&gt;
+    &lt;input type="checkbox"&gt; Remember me
+&lt;/label&gt;</code></pre>
+
+            <!-- Alerts -->
+            <h3 id="alerts" class="pulse-text-2xl pulse-font-semibold pulse-mt-lg pulse-mb-md">Alerts</h3>
+            <p class="pulse-mb-md pulse-text-gray-700">Provide contextual feedback messages with predefined alert styles. Use <code>.pulse-alert</code> with a color variant (e.g., <code>.pulse-alert-info</code>).</p>
+            <div class="pulse-alert pulse-alert-info">
+                <span class="pulse-alert-icon">&#x2139;</span> This is an info alert! It provides general information.
+            </div>
+            <div class="pulse-alert pulse-alert-success">
+                <span class="pulse-alert-icon">&#x2713;</span> Success! Your operation was completed successfully.
+            </div>
+            <div class="pulse-alert pulse-alert-warning">
+                <span class="pulse-alert-icon">&#x26A0;</span> Warning! Something needs your attention.
+            </div>
+            <div class="pulse-alert pulse-alert-danger">
+                <span class="pulse-alert-icon">&#x2716;</span> Error! An error occurred during the process.
+            </div>
+            <pre><code>&lt;div class="pulse-alert pulse-alert-info"&gt;
+    &lt;span class="pulse-alert-icon"&gt;&amp;#x2139;&lt;/span&gt; This is an info alert!
+&lt;/div&gt;</code></pre>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pulse-bg-gray-800 pulse-text-white pulse-py-lg pulse-mt-lg">
+        <div class="pulse-container pulse-text-center pulse-text-gray-400">
+            <p class="pulse-text-sm">&copy; 2025 Pulse Framework. All rights reserved.</p>
+            <p class="pulse-text-sm pulse-mt-md">Built with simplicity and extensibility in mind.</p>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
